@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+  <name>InjuryNotifier</name>
+  <author>Maarx</author>
+  <url>https://github.com/maarxx/InjuryNotifier/</url>
+  <targetVersion>0.16.1393</targetVersion>
+  <description>Notifies you when a Pawn suffers a permanent Injury.</description>
+</ModMetaData>
