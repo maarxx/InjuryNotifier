@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld.Planet;
+using System.Collections.Generic;
 using Verse;
 
 namespace InjuryNotifier
@@ -37,7 +38,8 @@ namespace InjuryNotifier
                     isNew = set.Add(new PawnPartProblem(p.thingIDNumber, hmp.Part.def.label, hmp.Label));
                     if (notify && isNew)
                     {
-                        Log.Message(p.NameStringShort + " lost " + hmp.Part.def.label + " due to " + hmp.Label + "!");
+                        //Log.Message(p.NameStringShort + " lost " + hmp.Part.def.label + " due to " + hmp.Label + "!");
+                        Find.LetterStack.ReceiveLetter("Lost Part", p.NameStringShort + " lost their " + hmp.Part.def.label + " due to " + hmp.Label + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
                     }
                 }
                 foreach (Hediff h in p.health.hediffSet.hediffs)
@@ -52,7 +54,8 @@ namespace InjuryNotifier
                             isNew = set.Add(new PawnPartProblem(p.thingIDNumber, hi.Part.def.label, hi.Label));
                             if (notify && isNew)
                             {
-                                Log.Message(p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!");
+                                //Log.Message(p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!");
+                                Find.LetterStack.ReceiveLetter("New Scar", p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
                             }
                         }
                     }
