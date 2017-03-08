@@ -8,21 +8,28 @@ namespace InjuryNotifier
     {
         public int slowDown = 0;
         public HashSet<PawnPartProblem> set = new HashSet<PawnPartProblem>();
+        public bool firstRun = true;
 
         public InjuryNotifier(Map map) : base(map)
         {
-            //Log.Message("Hello from InjuryNotifier InjuryNotifier");
-            updateCollection(true);
+            updateCollection(false); // Doesn't seem to work, no biggie.
         }
 
         public override void MapComponentTick()
         {
-            //Log.Message("Hello from InjuryNotifier MapComponentTick");
             slowDown++;
             if (slowDown > 100)
             {
                 slowDown = 0;
-                updateCollection(true);
+                if (firstRun)
+                {
+                    updateCollection(false);
+                    firstRun = false;
+                }
+                else
+                {
+                    updateCollection(true);
+                }
             }
         }
 
