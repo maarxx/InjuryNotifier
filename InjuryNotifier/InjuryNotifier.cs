@@ -42,11 +42,11 @@ namespace InjuryNotifier
                 {
                     //Log.Message(p.NameStringShort + " lost " + hmp.Part.def.label + " due to " + hmp.Label + "!");
                     bool isNew = false;
-                    isNew = set.Add(new PawnPartProblem(p.thingIDNumber, hmp.Part.def.label, hmp.Label));
+                    isNew = set.Add(new PawnPartProblem(p.thingIDNumber, hmp.Part.def.label, trimInjuryLabel(hmp.Label)));
                     if (notify && isNew)
                     {
                         //Log.Message(p.NameStringShort + " lost " + hmp.Part.def.label + " due to " + hmp.Label + "!");
-                        Find.LetterStack.ReceiveLetter("Lost Part", p.NameStringShort + " lost their " + hmp.Part.def.label + " due to " + hmp.Label + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
+                        Find.LetterStack.ReceiveLetter("Lost Part", p.NameStringShort + " lost their " + hmp.Part.def.label + " due to " + trimInjuryLabel(hmp.Label) + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
                     }
                 }
                 foreach (Hediff h in p.health.hediffSet.hediffs)
@@ -58,11 +58,11 @@ namespace InjuryNotifier
                         {
                             //Log.Message(p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!");
                             bool isNew = false;
-                            isNew = set.Add(new PawnPartProblem(p.thingIDNumber, hi.Part.def.label, hi.Label));
+                            isNew = set.Add(new PawnPartProblem(p.thingIDNumber, hi.Part.def.label, trimInjuryLabel(hi.Label)));
                             if (notify && isNew)
                             {
                                 //Log.Message(p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!");
-                                Find.LetterStack.ReceiveLetter("New Scar", p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
+                                Find.LetterStack.ReceiveLetter("New Scar", p.NameStringShort + " has new " + trimInjuryLabel(hi.Label) + " on their " + hi.Part.def.label + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
                             }
                         }
                     }
@@ -70,6 +70,20 @@ namespace InjuryNotifier
             }
             //Log.Message("Hello from InjuryNotifier updateCollection END");
         }
+
+        public static string trimInjuryLabel(string s)
+        {
+            int leftParenIndex = s.IndexOf(" (");
+            if (leftParenIndex > 0)
+            {
+                return s.Substring(0, leftParenIndex);
+            }
+            else
+            {
+                return s;
+            }
+        }
+
     }
 
     public struct PawnPartProblem
@@ -80,9 +94,11 @@ namespace InjuryNotifier
 
         public PawnPartProblem(int pawnIDNumber, string part_label, string hediff_label)
         {
+
             this.pawnIDNumber = pawnIDNumber;
             this.part_label = part_label;
             this.hediff_label = hediff_label;
+
         }
 
         public override int GetHashCode()
