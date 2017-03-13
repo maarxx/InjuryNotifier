@@ -68,7 +68,7 @@ Most (but not all) of my mods have a "beta" branch for pre-release, which might 
 
 So if you tried updating from the "master" branch, and you still think you found a bug or a problem, or if you just want to try the shiny new features before everybody else, consider downloading the "beta" branch and installing that instead.
 
-To do this, just click the button where it says "Branch: master", and then click the option for "beta". Congratulations! You've changed branches! Follow the same steps to download and install, except instead of `InjuryNotifier-master` it will now be `InjuryNotifier-beta`. Make sure you still delete other/old versions, don't try to have both master and beta installed simultaneously.
+To do this, just click the button where it says "Branch: master", and then click the option for "beta". Congratulations! You've changed branches! Follow the same steps to download and install, except instead of `InjuryNotifier-master` it will now be `InjuryNotifier-beta`. You can have both versions installed, but please don't try to have both versions enabled at once using the in-game Mod menu.
 
 You will probably see other choices besides "master" and "beta", but I don't recommend clicking them. I am probably in the middle of working on them, and they are probably only halfway done, and broken, otherwise they'd already be part of "beta".
 
