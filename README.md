@@ -44,6 +44,12 @@ Then restart RimWorld and enable it like any other mod.
 
 # How to Update
 
+First and foremost, please note that I never test updating mods on older saved games. You can try it, but please assume that a new game might always be necessary.
+
+I also don't explicitly test whether the mod can be disabled on an existing game. Please also assume that a new game might always be necessary.
+
+With that out of the way:
+
 Updating is just deleting the previous version of the mod and then installing a new version.
 
 So again, assuming default installation directories on a Windows system, you'll want to delete the same folder that you added during installation, which probably looks something like:
