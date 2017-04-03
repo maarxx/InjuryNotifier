@@ -4,15 +4,26 @@ using Verse;
 
 namespace InjuryNotifier
 {
-    public class InjuryNotifier : MapComponent
+    public class MapComponent_InjuryNotifier : MapComponent
     {
         public int slowDown = 0;
         public HashSet<PawnPartProblem> set = new HashSet<PawnPartProblem>();
         public bool firstRun = true;
 
-        public InjuryNotifier(Map map) : base(map)
+        public MapComponent_InjuryNotifier(Map map) : base(map)
         {
-            updateCollection(false); // Doesn't seem to work, no biggie.
+            LongEventHandler.QueueLongEvent(ensureComponentExists, null, false, null);
+        }
+
+        public static void ensureComponentExists()
+        {
+            foreach (Map m in Find.Maps)
+            {
+                if (m.GetComponent<MapComponent_InjuryNotifier>() == null)
+                {
+                    m.components.Add(new MapComponent_InjuryNotifier(m));
+                }
+            }
         }
 
         public override void MapComponentTick()
