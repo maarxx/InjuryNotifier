@@ -2,6 +2,8 @@
 
 This is a mod for the game RimWorld by Ludeon Studios.
 
+It notifies you when a Pawn suffers a permanent Injury.
+
 # Table of Contents
 
 * [Introduction and Explanation](#introduction-and-explanation)
