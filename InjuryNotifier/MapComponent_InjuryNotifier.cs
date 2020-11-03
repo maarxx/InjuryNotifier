@@ -57,7 +57,7 @@ namespace InjuryNotifier
                     if (notify && isNew)
                     {
                         //Log.Message(p.NameStringShort + " lost " + hmp.Part.def.label + " due to " + hmp.Label + "!");
-                        Find.LetterStack.ReceiveLetter("Lost Part", p.NameStringShort + " lost their " + hmp.Part.def.label + " due to " + trimInjuryLabel(hmp.Label) + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
+                        Find.LetterStack.ReceiveLetter("Lost Part", p.Name.ToStringShort + " lost their " + hmp.Part.def.label + " due to " + trimInjuryLabel(hmp.Label) + "!", RimWorld.LetterDefOf.NegativeEvent, new GlobalTargetInfo(p));
                     }
                 }
                 foreach (Hediff h in p.health.hediffSet.hediffs)
@@ -65,7 +65,7 @@ namespace InjuryNotifier
                     if (h is Hediff_Injury)
                     {
                         Hediff_Injury hi = (Hediff_Injury)h;
-                        if (hi.IsOld())
+                        if (hi.IsPermanent())
                         {
                             //Log.Message(p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!");
                             bool isNew = false;
@@ -73,7 +73,7 @@ namespace InjuryNotifier
                             if (notify && isNew)
                             {
                                 //Log.Message(p.NameStringShort + " has new " + hi.Label + " on their " + hi.Part.def.label + "!");
-                                Find.LetterStack.ReceiveLetter("New Scar", p.NameStringShort + " has new " + trimInjuryLabel(hi.Label) + " on their " + hi.Part.def.label + "!", LetterType.BadUrgent, new GlobalTargetInfo(p));
+                                Find.LetterStack.ReceiveLetter("New Scar", p.Name.ToStringShort + " has new " + trimInjuryLabel(hi.Label) + " on their " + hi.Part.def.label + "!", RimWorld.LetterDefOf.NegativeEvent, new GlobalTargetInfo(p));
                             }
                         }
                     }
