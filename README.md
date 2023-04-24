@@ -6,13 +6,9 @@ The mod will notify you via letter whenever a pawn suffers a permanent injury, s
 
 # Table of Contents
 
-* [Introduction and Explanation](#introduction-and-explanation)
+* [Introduction](#introduction)
 
-# Introduction and Explanation
-
-You'll add the mod. You'll enable the mod. It will immediately start working.
-
-There is no interface or configuration options. If you don't like it, turn the mod off again.
+# Introduction
 
 The mod will notify you via letter whenever a pawn suffers a permanent injury, such as a lost limb, new scar, or destroyed organ.
 
