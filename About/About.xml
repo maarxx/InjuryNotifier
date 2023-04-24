@@ -3,7 +3,9 @@
   <name>InjuryNotifier</name>
   <author>Maarx</author>
   <url>https://github.com/maarxx/InjuryNotifier/</url>
-  <description>Notifies you when a Pawn suffers a permanent Injury.</description>
+  <description>
+The mod will notify you via letter whenever a pawn suffers a permanent injury, such as a lost limb, new scar, or destroyed organ.
+  </description>
   <packageId>maarx.injurynotifier</packageId>
   <supportedVersions>
     <li>1.2</li>
