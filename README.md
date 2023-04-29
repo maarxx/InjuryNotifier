@@ -17,8 +17,8 @@ Yes, "permanent gunshot injury" to the brain is considered a scar.
 
 # Links
 
-We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2967719437
+We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2967717126
 
-We're on GitHub: https://github.com/maarxx/CustomizedXenogerm
+We're on GitHub: https://github.com/maarxx/InjuryNotifier
 
 For reporting bugs or requesting features, Github Issues are better than Steam Workshop Comments.
